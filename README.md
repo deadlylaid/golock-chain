@@ -1,13 +1,21 @@
 ## GoLock-Chain
 
-![marin](https://thumbs.gfycat.com/PoorFearlessDragon-size_restricted.gif)
+Implement BlockChain using Golang
 
-**Jade Han** : Hey! What the fucking language was that?
 
-**Marin** : Go, Go, Go!
 
-[Voice Link](https://youtu.be/ZYTPgW5PJFU?t=11s)
+### Project Path
 
-## gogocoin
+```
+~/go/src/github.com/golock-chain
+```
 
-![gogocoin mining](https://raw.githubusercontent.com/deadlylaid/golock-chain/master/images/gogocoin.gif)
+### Implement Process
+
+- Create Genesis Block and Chain
+- Proof of work when create block
+  - Data
+  - SHA-256 hasing
+  - Nonce
+- Create persistence of blockchain
+- Command Line Interface
