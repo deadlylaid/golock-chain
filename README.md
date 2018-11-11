@@ -8,6 +8,8 @@ Implement BlockChain using Golang
 
 ```
 ~/go/src/github.com/golock-chain
+$ go install
+$ golock-chain --help
 ```
 
 ### Implement Process

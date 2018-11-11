@@ -37,7 +37,7 @@ func (pow *ProofOfWork) prepareData(nonce int) []byte {
 	data := bytes.Join(
 		[][]byte{
 			pow.block.PrevBlockHash,
-			pow.block.Data,
+			pow.block.HashTransactions(),
 			[]byte(strconv.FormatInt(pow.block.Timestamp, 16)),
 			[]byte(strconv.FormatInt(int64(targetBits), 16)),
 			[]byte(strconv.FormatInt(int64(nonce), 16)),
@@ -53,7 +53,7 @@ func (pow *ProofOfWork) Run() (int, []byte) {
 	var hash [32]byte
 	nonce := 0
 
-	fmt.Printf("golockchain block을 채굴합니다.  \"%s\"\n", pow.block.Data)
+	fmt.Print(pow.block.Transactions)
 	for nonce < maxNonce {
 		data := pow.prepareData(nonce)
 
