@@ -67,12 +67,15 @@ Transaction, 입력과 출력으로 구성된다.
 
 
 
-####  UTXO
+####  UTXO(Unspent Transaction Output)
 
-코인 거래에 가장 중요한 부분인 UTXO는 잔액계산 시스템과 얼추 비슷하다. 가령 Person A에게 1 gogocoin, 9 gogocoin, 2 gogocoin 총 3개의 UTXO가 있다고 가정한다. 이중 Person B에게 8gogocoin을 전송하면 위 의 3개의 UTXO중에서 8보다 높은 9 gogocoin을 검색해서 입력값으로 전송한다. 그러면 일단 9 gogocoin을 총액을 전송한 다음 출력값에서 8 gogocoin, 1 gogocoin으로 나눈다음 1 gogocoin을 입력값으로 되돌려준다.
+UTXO는 `사용되지 않은 거래출력`이라고 할 수 있다.
 
-##### 경우의 수
+코인 거래에 가장 중요한 부분인 UTXO는 잔액계산 시스템과 얼추 비슷하다. 
 
-1. 하나의 입력값, 2개의 출력 값
-
-가장 일반적인 거래 형태, A가 10개의 비트코인 중에 2개의 비트코인을 전송한다.
+- Person A에게 [1 gogocoin], [9 gogocoin], [2 gogocoin] 총 3개의 UTXO가 있다고 가정한다.
+- Person B에게 [8 gogocoin]을 전송하려고한다.
+- Person A가 갖고 있는 3개의 UTXO중에서 8보다 높은 9 gogocoin을 참조해서 입력값으로 전송한다. 
+- 9 gogocoin을 총액을 전송한 다음 출력값에서 8 gogocoin, 1 gogocoin으로 나눈다.
+- 1 gogocoin을 Person A에게 입력값으로 되돌려준다.
+- 만약 보유하고 있는 UTXO 중 가장 큰 값보다 큰 gogocoin을 전송하려고 하면 전송에 실패한다.
